@@ -1,0 +1,19 @@
+{
+  "name": "boxunsoft/php_sso_lab",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jordy",
+      "email": "3178920@qq.com"
+    }
+  ],
+  "require": {
+    "boxunsoft/php-framework": "v2.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ala\\": "src/"
+    }
+  }
+}

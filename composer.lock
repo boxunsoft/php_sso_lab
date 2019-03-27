@@ -1,0 +1,91 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "2fe4944e9e27cd9802ef94edb8c32dd5",
+    "packages": [
+        {
+            "name": "boxunsoft/php-framework",
+            "version": "v2.0.0-stable",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/boxunsoft/php-framework.git",
+                "reference": "6cc92504af5d0be05efd546a76063efaa85017cd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/boxunsoft/php-framework/zipball/6cc92504af5d0be05efd546a76063efaa85017cd",
+                "reference": "6cc92504af5d0be05efd546a76063efaa85017cd",
+                "shasum": ""
+            },
+            "require": {
+                "boxunsoft/php-instance": "1.1.*",
+                "php": ">=7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Alf\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jordy",
+                    "email": "arno.zheng@gmail.com"
+                }
+            ],
+            "description": "Simple Web MVC Framework",
+            "time": "2019-03-27T06:41:19+00:00"
+        },
+        {
+            "name": "boxunsoft/php-instance",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/boxunsoft/php-instance.git",
+                "reference": "6a4c4622da3000e97a792a9f728d3922a8eeb645"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/boxunsoft/php-instance/zipball/6a4c4622da3000e97a792a9f728d3922a8eeb645",
+                "reference": "6a4c4622da3000e97a792a9f728d3922a8eeb645",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ali\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordy",
+                    "email": "arno.zheng@gmail.com"
+                }
+            ],
+            "description": "php instance trait",
+            "time": "2018-12-29T02:25:36+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
