@@ -25,9 +25,9 @@ B->>S: 拿ticket去S验证,验证通过则把S上的cookie保存一份到B
 
 ## 验证方式
 
-1. 在浏览器打开http://sso.example3.com,这个会设置session和cookie
-2. 在浏览器打开http://www.example1.com,抓包或使用开发者工具查看login_api的响应结果
-3. 在浏览器打开http://www.example2.com,抓包或使用开发者工具查看login_api的响应结果
+1. 在浏览器打开http://sso.example3.com，这个会设置session和cookie
+2. 在浏览器打开http://www.example1.com，抓包或使用开发者工具查看login_api的响应结果
+3. 在浏览器打开http://www.example2.com，抓包或使用开发者工具查看login_api的响应结果
 
 ## 解决方案
 
