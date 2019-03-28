@@ -1,5 +1,8 @@
 ## SSO单点登录流程
 
+* 本实验使用http测试,实际使用时建议使用https
+* 淘宝使用的是方案一,每次页面访问时候都去login_api获取登录信息,如果从未登录状态->登录状态,会跳到相应域名把cookie保存到相应的顶级域名下
+
 ### 简称：
 
 > 1. 站点(A): www.example1.com 
@@ -31,14 +34,14 @@ B->>S: 拿ticket去S验证,验证通过则把S上的cookie保存一份到B
 #### A
 ```js
 $(function(){
-    $.getScript('https://sso.example3.com/login_api')
+    $.getScript('http://sso.example3.com/login_api')
 })
 ```
 
 #### B
 ```js
 $(function(){
-    $.getScript('https://sso.example3.com/login_api')
+    $.getScript('http://sso.example3.com/login_api')
 })
 ```
 
@@ -67,7 +70,7 @@ echo 'var v=' . json_encode($response, JSON_PARTIAL_OUTPUT_ON_ERROR) . ';';
 ```js
 $(function(){
     $.ajax({
-        url: 'https://sso.example3.com/login_api',
+        url: 'http://sso.example3.com/login_api',
         // 这个一定要添加,否则每次请求,S站的session_id每次都变化
         xhrFields: {
             withCredentials: true
@@ -83,7 +86,7 @@ $(function(){
 ```js
 $(function(){
     $.ajax({
-        url: 'https://sso.example3.com/login_api',
+        url: 'http://sso.example3.com/login_api',
         xhrFields: {
             withCredentials: true
         },
@@ -106,8 +109,8 @@ $response = [
 
 session_set_cookie_params(3600, '/', '.sso.example3.com', true, true);
 $allowOriginConfig = [
-    'https://www.example1.com',
-    'https://www.example2.com',
+    'http://www.example1.com',
+    'http://www.example2.com',
 ];
 // P3P: Platform for Privacy Preferences, 是W3C公布的一项隐私保护推荐标准，以为用户提供隐私保护。
 // P3P标准的构想是：Web 站点的隐私策略应该告之访问者该站点所收集的信息类型、信息将提供给哪些人、信息将被保留多少时间及其使用信息的方式，如站点应做诸如 “本网站将监测您所访问的页面以提高站点的使用率”或“本网站将尽可能为您提供更合适的广告”等申明。访问支持P3P网站的用户有权查看站点隐私报告，然后决定是否接受cookie 或是否使用该网站。

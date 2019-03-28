@@ -12,8 +12,17 @@ use Ala\Application\SSO\Controller;
 
 class LoginApi extends Controller
 {
+    public function main() {
+        $scheme = intval($this->request()->get('scheme'));
+        if (2==$scheme) {
+            $this->main2();
+        } else {
+            $this->main1();
+        }
+    }
+
     // 方案一
-    public function main()
+    private function main1()
     {
         $response = [
             'session' => $_SESSION,
@@ -23,7 +32,7 @@ class LoginApi extends Controller
             'code' => 0
         ];
 
-        session_set_cookie_params(3600, '/', '.devsso.testsso.com', true, true);
+        session_set_cookie_params(3600, '/', '.sso.example3.com', true, true);
 
         ob_clean();
         header('Content-type:application/x-javascript');
@@ -32,7 +41,7 @@ class LoginApi extends Controller
     }
 
     // 方案二
-    public function main2()
+    private function main2()
     {
         $response = [
             'session' => $_SESSION,
@@ -44,8 +53,8 @@ class LoginApi extends Controller
 
         session_set_cookie_params(3600, '/', '.sso.example3.com', true, true);
         $allowOriginConfig = [
-            'https://www.example1.com',
-            'https://www.example2.com',
+            'http://www.example1.com',
+            'http://www.example2.com',
         ];
         // P3P: Platform for Privacy Preferences, 是W3C公布的一项隐私保护推荐标准，以为用户提供隐私保护。
         // P3P标准的构想是：Web 站点的隐私策略应该告之访问者该站点所收集的信息类型、信息将提供给哪些人、信息将被保留多少时间及其使用信息的方式，如站点应做诸如 “本网站将监测您所访问的页面以提高站点的使用率”或“本网站将尽可能为您提供更合适的广告”等申明。访问支持P3P网站的用户有权查看站点隐私报告，然后决定是否接受cookie 或是否使用该网站。

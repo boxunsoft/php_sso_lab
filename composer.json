@@ -9,7 +9,7 @@
     }
   ],
   "require": {
-    "boxunsoft/php-framework": "v2.*"
+    "boxunsoft/php-framework": "v2.0.*"
   },
   "autoload": {
     "psr-4": {

@@ -14,6 +14,10 @@ class Index extends Controller
 {
     public function main()
     {
+        $_SESSION['user_id'] = 10000;
+        setcookie('a', 'AAAA', 0, '/', 'example3.com', false, false);
+        setcookie('b', 'BBBB', 0, '/', '.example3.com', true, true);
+        setcookie('c', 'CCCC', 0, '/', '.example3.com', false, true);
         $this->view->render();
     }
 }

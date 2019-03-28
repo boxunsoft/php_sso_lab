@@ -14,7 +14,6 @@ class Index extends Controller
 {
     public function main()
     {
-        header("ORIGIN:");
         $this->view->render();
     }
 }

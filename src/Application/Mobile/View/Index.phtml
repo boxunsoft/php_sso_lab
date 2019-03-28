@@ -15,18 +15,18 @@
     <script type="text/javascript">
         $(function(){
             // 方案一
-            $.getScript('https://sso.example3.com/login_api')
+            $.getScript('http://sso.example3.com/login_api?scheme=1')
 
             // 方案二
-            // $.ajax({
-            //     url: 'http://devsso.testsso3.com/login_api',
-            //     xhrFields: {
-            //         withCredentials: true
-            //     },
-            //     success: function(response) {
-            //         console.log(response)
-            //     }
-            // })
+            $.ajax({
+                url: 'http://sso.example3.com/login_api?scheme=2',
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: function(response) {
+                    console.log(response)
+                }
+            })
         })
     </script>
 </head>
